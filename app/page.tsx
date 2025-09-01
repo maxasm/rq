@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { TrendingUp, Brain, Target, Shield, Users, Zap, X, Trophy, Star, Cpu, BarChart3, Sparkles, Wallet, ArrowUpCircle, ArrowDownCircle } from 'lucide-react';
 import { SignInButton, SignOutButton, useUser, UserButton } from '@clerk/nextjs';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Area, AreaChart } from 'recharts';
+import { XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Area, AreaChart } from 'recharts';
 
 export default function Home() {
   const { isSignedIn, user, isLoaded } = useUser();
@@ -333,7 +333,8 @@ export default function Home() {
     }, Math.random() * 5000 + 3000); // Random interval between 3-8 seconds
 
     return () => clearInterval(interval);
-  }, []);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []); // topTraders is a constant array, safe to omit from dependencies
 
   // Dashboard Component for signed-in users
   const DashboardView = () => (
@@ -538,7 +539,7 @@ export default function Home() {
                     borderRadius: '8px',
                     color: '#ffffff'
                   }}
-                  formatter={(value: any, name: string) => [
+                  formatter={(value: number, name: string) => [
                     `KSh ${value.toLocaleString()}`,
                     name === 'value' ? 'Portfolio Value' : name
                   ]}
@@ -704,10 +705,10 @@ export default function Home() {
       <section className="bg-gradient-to-br from-amber-400 to-amber-600 text-black py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-5xl font-bold mb-6">
-            Kenya's Premier AI-Powered Trading Platform
+            Kenya&apos;s Premier AI-Powered Trading Platform
           </h2>
           <p className="text-xl mb-8 max-w-3xl mx-auto">
-            Place smart trades with our advanced AI assistant. Powered by the world's best AI models, 
+            Place smart trades with our advanced AI assistant. Powered by the world&apos;s best AI models, 
             our platform helps you make informed decisions making you make up to 500% in 30 days.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -867,7 +868,7 @@ export default function Home() {
                 <h3 className="text-xl font-bold text-white">Polymarket Ke</h3>
               </div>
               <p className="text-gray-400">
-                Kenya's premier AI-powered trading platform. Trade smart, win more.
+                Kenya&apos;s premier AI-powered trading platform. Trade smart, win more.
               </p>
             </div>
             
@@ -1584,7 +1585,7 @@ export default function Home() {
                 <div className="bg-gray-700/30 rounded-lg p-6">
                   <h4 className="text-xl font-semibold text-white mb-4 flex items-center">
                     <Users className="w-5 h-5 text-amber-400 mr-2" />
-                    Need Help? We're Here 24/7
+                    Need Help? We&apos;re Here 24/7
                   </h4>
                   
                   <div className="grid md:grid-cols-2 gap-6">
@@ -1627,7 +1628,7 @@ export default function Home() {
                     onClick={() => setShowHowToPopup(false)}
                     className="btn-primary text-lg px-8 py-3 cursor-pointer"
                   >
-                    Got it, Let's Start Trading!
+                    Got it, Let&apos;s Start Trading!
                   </button>
                 </div>
               </div>
