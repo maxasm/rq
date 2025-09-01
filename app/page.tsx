@@ -708,7 +708,7 @@ export default function Home() {
             Kenya&apos;s Premier AI-Powered Trading Platform
           </h2>
           <p className="text-xl mb-8 max-w-3xl mx-auto">
-            Place smart trades with our advanced AI assistant. Powered by the world&apos;s best AI models, 
+            Place smart trades with our advanced AI assistant. Powered by the world's best AI models, 
             our platform helps you make informed decisions making you make up to 500% in 30 days.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
